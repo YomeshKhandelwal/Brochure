@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DronesZ - Viewing Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 1px solid #c0392b;
+      border-radius: 5px;
+      background-color: #fff;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to DronesZ!</h1>
+  <p>How would you like to view our brochure?</p>
+  <button id="mobile-view">Mobile Viewing</button>
+  <button id="desktop-view">Desktop Viewing</button>
+
+  <script>
+    const mobileViewButton = document.getElementById('mobile-view');
+    const desktopViewButton = document.getElementById('desktop-view');
+
+    mobileViewButton.addEventListener('click', () => {
+      // Redirect user to the mobile version of the website
+      window.location.href = 'Mobile.html'; // Replace with your actual mobile HTML file
+    });
+
+    desktopViewButton.addEventListener('click', () => {
+      // Redirect user to the desktop version of the website
+      window.location.href = 'Desktop.html'; // Replace with your actual desktop HTML file
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DronesZ - A drone brought to you by a GenZ</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header, .service, .contact, .footer, .about, .faq, .marketplace {
+            margin-bottom: 30px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        h1 {
+            color: #c0392b;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: #c0392b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        h4 {
+            color: #000000;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.5;
+            font-weight: lighter;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            width: 700%;
+            height: auto;
+            max-width: 700px;
+        }
+
+        .service-image {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .service-image:hover {
+            transform: scale(1.05);
+        }
+
+        .service {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact, .footer {
+            text-align: center;
+        }
+
+        .about {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #c0392b;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a02722;
+        }
+
+        .faq h3 {
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .faq p {
+            display: none;
+            padding: 0 10px 10px;
+        }
+
+        .faq h3.active + p {
+            display: block;
+        }
+
+        .arrow {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .faq h3.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .service {
+                margin-bottom: 20px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Additional styles for new feature */
+        .marketplace {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .marketplace h2 {
+            font-size: 24px;
+            color: #c0392b;
+            margin-bottom: 15px;
+        }
+
+        .marketplace p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            background-color: #c0392b;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn-primary:hover {
+            background-color: #a02722;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var faqHeaders = document.querySelectorAll('.faq h3');
+            faqHeaders.forEach(function (header) {
+                header.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo.jpeg" alt="Company Name Logo" class="logo">
+            <h4>BROCHURE</h4>
+        </header>
+
+        <section class="about">
+            <h2>About Us</h2>
+            <p>DronesZ is an upcoming innovator in the drone industry, founded by a passionate GenZ entrepreneur. Our mission is to harness cutting-edge technology to create versatile and high-performance drones that serve a wide range of applications, from environmental conservation to high-speed aerial sports. With a focus on AI integration and custom solutions, we are dedicated to pushing the boundaries of what's possible in the world of unmanned aerial vehicles.</p>
+        </section>
+
+        <section class="service">
+            <img src="FC3.png" alt="Flight Controller" class="service-image">
+            <h2>Flight Controller Power</h2>
+            <p>Take command with our top-shelf flight controllers. Our initial flight controller is a cost-effective, basic model designed for simplicity and efficiency. Future iterations will be AI-enabled, automatically tuning PID settings using real-time sensor data for optimal performance.</p>
+        </section>
+
+        <section class="service">
+            <img src="Aff drone.png" alt="Afforestation Drone" class="service-image">
+            <h2>Greener Skies, Greener Future</h2>
+            <p>Revolutionize reforestation with our AI-driven drone, strategically planting seed balls to restore lush forests on a massive scale.</p>
+        </section>
+
+        <section class="service">
+            <img src="Architect drone.jpg" alt="Architect Drone" class="service-image">
+            <h2>Architects in the Sky</h2>
+            <p>Equipped with advanced LiDAR and comprehensive sensor technology, our drone delivers precise 3D visualizations and thorough outdoor inspections and much more for architectural projects. Take your vision to new heights.</p>
+        </section>
+
+        <section class="service">
+            <img src="FPV.jpg" alt="FPV Drone" class="service-image">
+            <h2>High on Adrenaline</h2>
+            <p>Soar through the skies with unrivaled agility using our FPV drone, delivering an immersive flying experience like never before. Capture breathtaking aerial footage in stunning detail and navigate tight spaces with ease.</p>
+        </section>
+
+        <section class="service">
+            <img src="medical drone.png" alt="Medical Drone" class="service-image">
+            <h2>Life Saver in the Air</h2>
+            <p>Our innovative medical drone swiftly delivers and clamps to ventilators, providing critical respiratory support immediately after any medical emergency. This rapid response capability ensures life-saving assistance when it's needed most. (In progress)</p>
+        </section>
+
+        <section class="service">
+            <img src="Custom.jpg" alt="Custom Drone" class="service-image">
+            <h2>Custom Build</h2>
+            <p>Experience unparalleled innovation with our exclusive, market-leading custom drone build service, tailored uniquely to your needs. Elevate your aerial capabilities with bespoke drones, meticulously crafted by DronesZ.</p>
+        </section>
+
+        <!-- New Marketplace Section -->
+        <section class="marketplace">
+            <h2>Drone Services Marketplace</h2>
+            <p>We are excited to announce the launch of our innovative marketplace where drone service providers and clients seeking drone services can connect effortlessly. Whether you need aerial photography, surveying, or specialized drone applications, our platform will facilitate seamless transactions and expert collaborations.</p>
+            <p>Are you a drone service provider or looking to access drone services? Join our marketplace today and unlock a world of possibilities!</p>
+            <a href="#" class="btn-primary">Explore Marketplace(this feature will be available on our website) </a>
+        </section>
+        
+        <section class="faq">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <h3>1. Does DronesZ Flight controller made in India?<span class="arrow">▼</span></h3>
+            <p>Yes, our flight controller is designed by us and also fabricated in India. Some of the parts might be imported, but fabricating in India allows us to keep the price on the cheaper side. Additionally, its future generation will be AI-enabled and capable of auto PID tuning.</p>
+            <h3>2. What types of drones do you offer?<span class="arrow">▼</span></h3>
+            <p>We offer a variety of drones including flight controllers, afforestation drones, FPV drones, medical drones, and custom-built drones tailored to your specific needs.</p>
+            <h3>3. How can I purchase a drone?<span class="arrow">▼</span></h3>
+            <p>You can contact us via email at <a href="mailto:yomesh.dronesz@gmail.com">yomesh.dronesz@gmail.com</a> or call us at <a href="tel:+91 7869325901">+91 7869325901</a> to place an order or inquire about our products.</p>
+            <h3>4. Do you provide custom drone solutions?<span class="arrow">▼</span></h3>
+            <p>Yes, we specialize in providing custom drone solutions tailored to your specific requirements. We will work closely with you to design and build the perfect drone for your needs.</p>
+            <h3>5. Are your drones AI-enabled?<span class="arrow">▼</span></h3>
+            <p>Some of our drones are AI-enabled, allowing for advanced features like strategic planting for afforestation projects. We are continuously working on integrating more AI capabilities into our products.</p>
+            <h3>6. How can I get support for my drone?<span class="arrow">▼</span></h3>
+            <p>If you need support for your drone, you can reach out to us via email or call support.</p>
+        </section>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:yomesh.dronesz@gmail.com">yomesh.dronesz@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+91 7869325901">+91 7869325901</a></p>
+                </div>
+                <img src="contact.jpg" alt="Contact" class="contact-image">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3>*All the pictures used are real except the animated ones<br>-DronesZ</h3>
+    </footer>
+</body>
+
+</html>
